@@ -5,11 +5,11 @@ paste = false
 function setup()
   keybow.auto_lights(false)
   keybow.clear_lights()
-  keybow.set_pixel(0, 0, 255, 0)
 
-  keybow.set_pixel(1, 0, 0, 255)
-  keybow.set_pixel(2, 2, 0, 255)
-  keybow.set_pixel(3, 2, 0, 255)
+  keybow.set_pixel(0, 121, 171, 96) -- Colour the vim paste key
+  keybow.set_pixel(9, 0, 43, 54) -- Colour the open terminal key
+  keybow.set_pixel(10, 0, 43, 54) -- Colour the open work terminal key
+  keybow.set_pixel(11, 247, 75, 53) -- Colour the open work firefox key
 end
 
 function handle_key_00(pressed)
@@ -33,7 +33,7 @@ function handle_key_00(pressed)
 end
 
 
-function handle_key_01(pressed)
+function handle_key_09(pressed)
   if pressed then
     keybow.set_modifier(keybow.LEFT_ALT, true)
     keybow.tap_key(keybow.F2, pressed)
@@ -45,7 +45,7 @@ function handle_key_01(pressed)
 end
 
 
-function handle_key_02(pressed)
+function handle_key_10(pressed)
   if pressed then
     keybow.set_modifier(keybow.LEFT_ALT, true)
     keybow.tap_key(keybow.F2, pressed)
@@ -56,7 +56,7 @@ function handle_key_02(pressed)
   end
 end
 
-function handle_key_03(pressed)
+function handle_key_11(pressed)
   if pressed then
     keybow.set_modifier(keybow.LEFT_ALT, true)
     keybow.tap_key(keybow.F2, pressed)
