@@ -1,6 +1,7 @@
 require "keybow"
 -- require "layouts/default" -- Numberpad
-require "layouts/sl_hyperkey" -- My Custom Numberpad
+-- require "layouts/sl_hyperkey" -- My Custom Numberpad
+require "layouts/commands"
 
 -- Custom layouts (uncomment to enable) --
 
