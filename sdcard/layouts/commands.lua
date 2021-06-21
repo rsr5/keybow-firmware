@@ -32,37 +32,29 @@ function handle_key_00(pressed)
   end
 end
 
+-- Cause the keybow to open the Gnome 3 run command dialogue and execute the command
+function run_command(pressed, command)
+  if pressed then
+    keybow.set_modifier(keybow.LEFT_ALT, true)
+    keybow.tap_key(keybow.F2, pressed)
+    keybow.set_modifier(keybow.LEFT_ALT, false)
+    keybow.usleep(500000)
+    keybow.text(command)
+    keybow.tap_key(keybow.ENTER, pressed)
+  end
+end
 
+-- Open a standard tmux session when the 9 key is pressed
 function handle_key_09(pressed)
-  if pressed then
-    keybow.set_modifier(keybow.LEFT_ALT, true)
-    keybow.tap_key(keybow.F2, pressed)
-    keybow.set_modifier(keybow.LEFT_ALT, false)
-    keybow.usleep(500000)
-    keybow.text("/usr/local/bin/st -e /bin/tmux")
-    keybow.tap_key(keybow.ENTER, pressed)
-  end
+  run_command(pressed, "/usr/local/bin/st -e /bin/tmux")
 end
 
-
+-- Open a work tmux session when the 10 key is pressed
 function handle_key_10(pressed)
-  if pressed then
-    keybow.set_modifier(keybow.LEFT_ALT, true)
-    keybow.tap_key(keybow.F2, pressed)
-    keybow.set_modifier(keybow.LEFT_ALT, false)
-    keybow.usleep(500000)
-    keybow.text("/home/robin/code/Dockerfiles/bin/otmux")
-    keybow.tap_key(keybow.ENTER, pressed)
-  end
+  run_command(pressed, "/home/robin/code/Dockerfiles/bin/otmux")
 end
 
+-- Open a work firefox when the 11 key is pressed
 function handle_key_11(pressed)
-  if pressed then
-    keybow.set_modifier(keybow.LEFT_ALT, true)
-    keybow.tap_key(keybow.F2, pressed)
-    keybow.set_modifier(keybow.LEFT_ALT, false)
-    keybow.usleep(500000)
-    keybow.text("/home/robin/code/Dockerfiles/bin/ofirefox")
-    keybow.tap_key(keybow.ENTER, pressed)
-  end
+  run_command(pressed, "/home/robin/code/Dockerfiles/bin/ofirefox")
 end
